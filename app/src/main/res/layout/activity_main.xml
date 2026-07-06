@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <!-- 顶部:账号状态 -->
+    <TextView
+        android:id="@+id/tvAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="未登录"
+        android:textSize="14sp"
+        android:paddingBottom="8dp" />
+
+    <!-- 分享链接输入 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etLink"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="粘贴阿里云盘分享链接"
+            android:textSize="13sp"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnRead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="读取" />
+    </LinearLayout>
+
+    <!-- 导航栏:返回上层 + 当前路径 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="4dp">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⬆ 上层"
+            android:enabled="false" />
+
+        <TextView
+            android:id="@+id/tvPath"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="(未读取)"
+            android:textSize="12sp"
+            android:paddingStart="8dp" />
+    </LinearLayout>
+
+    <!-- 文件列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFiles"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- 操作按钮 -->
+    <Button
+        android:id="@+id/btnTrack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="➕ 追更当前文件夹(自动追新集)" />
+
+    <!-- 追更清单标题 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📺 我的追更清单(点可查看/长按删除)"
+        android:textStyle="bold"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTrack"
+        android:layout_width="match_parent"
+        android:layout_height="120dp" />
+
+    <!-- 定时设置 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⏰ 每" />
+
+        <EditText
+            android:id="@+id/etInterval"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:text="6"
+            android:inputType="number"
+            android:textSize="14sp"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小时自动检查" />
+
+        <Button
+            android:id="@+id/btnSaveTimer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="开启自动追更" />
+    </LinearLayout>
+
+    <!-- 日志 -->
+    <TextView
+        android:id="@+id/tvLog"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text=""
+        android:textSize="11sp"
+        android:scrollbars="vertical"
+        android:background="#F0F0F0"
+        android:padding="6dp" />
+
+</LinearLayout>
